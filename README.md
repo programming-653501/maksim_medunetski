@@ -1,2 +1,2 @@
 # maksim_medunetski
-OK - 1, 2
+OK - 1, 2, 3
