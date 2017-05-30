@@ -1,0 +1,17 @@
+<div class="ui fluid vertical menu" *ngIf="userId !== null">
+    <a class="item" [routerLink]="['', 'user']">
+        <i class="ui home icon"></i>
+        Me
+    </a>
+    <a class="item" [routerLink]="['', 'article', 'add']">
+        <i class="ui write icon"></i>
+        Add an article
+    </a>
+    <a class="item" [routerLink]="['', 'settings']">
+        <i class="ui configure icon"></i>
+        Settings
+    </a>
+</div>
+<div class="ui warning message" *ngIf="userId === null">
+    <p>You're unlogged now. Please enter or register to get more abilities.</p>
+</div>

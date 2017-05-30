@@ -1,6 +1,0 @@
-C:\university\prog2sem\lab1\lab1\bin\Debug\lab1.exe.config
-C:\university\prog2sem\lab1\lab1\bin\Debug\lab1.exe
-C:\university\prog2sem\lab1\lab1\bin\Debug\lab1.pdb
-C:\university\prog2sem\lab1\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
-C:\university\prog2sem\lab1\lab1\obj\Debug\lab1.exe
-C:\university\prog2sem\lab1\lab1\obj\Debug\lab1.pdb

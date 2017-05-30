@@ -1,0 +1,23 @@
+<div *ngIf="status === 1">
+    <div class="ui segment" id="info">
+        <img class="ui circular left small floated image" [src]="imageUrl">
+        <h1 class="ui header">{{userName}}</h1>
+        <div>
+            <div *ngFor="let prop of info">{{prop.type}} : {{prop.value}}</div>
+        </div>
+    </div>
+    <div>
+        <articles-group [articlesId]="articlesId"></articles-group>
+    </div>
+</div>
+<div class="ui icon message" *ngIf="status === 0">
+    <i class="notched circle loading icon"></i>
+    <div class="content">
+        <div class="header">
+            Just one second
+        </div>
+    </div>
+</div>
+<div *ngIf="status === 2">
+    <not-found></not-found>
+</div>

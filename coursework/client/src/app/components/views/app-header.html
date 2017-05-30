@@ -1,0 +1,22 @@
+<div class="ui inverted fixed menu">
+    <a class="header item" routerLink="/">
+        <i class="newspaper icon"></i>
+        <b>YourArticles</b>
+    </a>
+    <div class="ui inverted right menu">
+        <div class="item">
+            <form class="ui icon input" (submit)="watchUser(f.value.login)" #f="ngForm">
+                <input type="text" placeholder="User login..." name="login" ngModel>
+                <i class="user icon"></i>
+            </form>
+        </div>
+        <a class="item" *ngIf="userId !== null" (click)="logOut()" routerLink="/auth">
+            <i class="sign out icon"></i>
+            Log out
+        </a>
+        <a class="item" *ngIf="userId === null" routerLink="/auth">
+            <i class="sign in icon"></i>
+            Log in
+        </a>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<form *ngIf="status !== 2" class="ui segment form" (submit)="edit()" [formGroup]="form" [class.loading]="status === 0">
+    <div class="field">
+        <label for="title">Title</label>
+        <input type="text" id="title" formControlName="title">
+    </div>
+    <div class="field">
+        <label for="content">Content</label>
+        <textarea id="content" formControlName="content"></textarea>
+    </div>
+    <div>
+        <button class="ui primary button" type="submit">Edit</button>
+    </div>
+</form>
+<div class="ui error message" *ngIf="status === 2">
+    <p>There are some errors. Maybe this article doesn't exist.</p>
+</div>
+<div class="ui success message" *ngIf="status === 3">
+    <p>The article was edited.</p>
+</div>
+<div class="ui error message" *ngIf="status === 4">
+    <p>The article wasn't edited.</p>
+</div>

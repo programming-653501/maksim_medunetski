@@ -1,0 +1,40 @@
+<div>
+    <div class="ui segment" *ngFor="let form of formGroups">
+        <form [formGroup]="form" class="ui form" #f="ngForm" (submit)="edit(f.value)">
+            <div class="two fields">
+                <input type="hidden" formControlName="id">
+                <div class="field">
+                    <label>Type</label>
+                    <input type="text" formControlName="type">
+                </div>
+                <div class="field">
+                    <label>Value</label>
+                    <input type="text" formControlName="value">
+                </div>
+                <div class="ui icon buttons">
+                    <button type="submit" class="ui primary button">
+                        <i class="icon save"></i>
+                    </button>
+                    <button type="button" class="ui secondary button" (click)="delete(f.value)">
+                        <i class="icon remove"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="ui teal inverted segment">
+        <form #f="ngForm" class="ui form" (submit)="addUserInfo(f.value)">
+            <div class="fields">
+                <div class="field">
+                    <label for="ftype">Type</label>
+                    <input id="ftype" type="text" name="type" ngModel>
+                </div>
+                <div class="field">
+                    <label for="fval">Value</label>
+                    <input id="fval" type="text" name="value" ngModel>
+                </div>
+                <button class="ui button" type="sumbit">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div id="wrapper">
+    <header>
+        <app-header></app-header>
+    </header>
+    <div id="page" class="ui grid">
+        <div class="two wide column"></div>
+        <aside class="three wide column">
+            <app-menu></app-menu>
+        </aside>
+        <div id="content" class="nine wide column">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="two wide column"></div>
+    </div>
+</div>

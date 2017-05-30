@@ -1,0 +1,29 @@
+<article>
+    <div class="ui segment piled" *ngIf="status === 1">
+        <div class="ui header">
+            {{article.title}}
+        </div>
+        <div id="content">{{article.content}}</div>
+        <div class="ui fluid buttons" *ngIf="article.userId === userId">
+            <a class="ui positive button" [routerLink]="['edit']">
+                <i class="edit icon"></i>
+                Edit
+            </a>
+            <button class="ui negative button" (click)="delete()">
+                <i class="remove icon"></i>
+                Delete
+            </button>
+        </div>
+    </div>
+</article>
+<div class="ui icon message" *ngIf="status === 0">
+    <i class="notched circle loading icon"></i>
+    <div class="content">
+        <div class="header">
+            Just one second
+        </div>
+    </div>
+</div>
+<div class="ui error message" *ngIf="status === 2">
+    Error. Maybe this article doesn't exist.
+</div>

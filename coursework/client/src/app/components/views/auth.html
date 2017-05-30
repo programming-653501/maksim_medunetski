@@ -1,0 +1,41 @@
+<div id="wrapper">
+    <div class="ui segment" id="window">
+        <h1 class="ui header centered">YourArticles</h1>
+        <form class="ui form" (submit)="logIn()" [formGroup]="form" [class.loading]="loading">
+            <div class="field" [class.error]="!login.valid && login.dirty">
+                <input name="login" type="text" placeholder="Login" [formControl]="login">
+            </div>
+            <div class="field" [class.error]="!password.valid && password.dirty">
+                <input name="password" type="password" placeholder="Password" [formControl]="password">
+            </div>
+            <div class="ui large buttons fluid">
+                <button type="submit" class="ui primary button" [class.disabled]="!form.valid">Log In</button>
+                <div class="or"></div>
+                <button type="button" (click)="register()" class="ui secondary button" [class.disabled]="!form.valid">Sign Up</button>
+            </div>
+        </form>
+        <div>
+            <div class="ui error message" *ngIf="!form.valid && form.dirty">
+                <div class="header">
+                    There are some errors
+                </div>
+                <ul class="list">
+                    <li *ngIf="!login.valid">Login must contain at least 3 chars</li>
+                    <li *ngIf="!password.valid">Password must contain at least 6 chars</li>
+                </ul>
+            </div>
+            <div class="ui success message" *ngIf="loginResponse === 1">
+                <p>You've successfully logged. <a routerLink="/user">Go to your profile</a></p>
+            </div>
+            <div class="ui success message" *ngIf="registerResponse === 1">
+                <p>You've successfully registred. Click login button to enter.</p>
+            </div>
+            <div class="ui error message" *ngIf="loginResponse === 2">
+                <p>Login failed. May be the login does not match the password or the user does not exist.</p>
+            </div>
+            <div class="ui error message" *ngIf="registerResponse === 2">
+                <p>Error while registering the user. Perhaps this user already exists.</p>
+            </div>
+        </div>
+    </div>
+</div>
